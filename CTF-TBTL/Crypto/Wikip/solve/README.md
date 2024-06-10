@@ -1,0 +1,3 @@
+No primeiro script, começamos convertendo a mensagem alvo `TARGET` para um inteiro com `bytes_to_long`. Escolhemos `m1 = 2`, simples e sem restrições. Calculamos seu inverso modular em relação a `N` para determinar `m2` de modo que `m1 * m2 ≡ TARGET (mod N)`, preparando para uma assinatura válida em RSA.
+
+No segundo script, assumindo que temos as assinaturas `sig1` e `sig2` de `m1` e `m2`, calculamos a assinatura forjada multiplicando `sig1 * sig2 % N`. Essa técnica explora a propriedade multiplicativa do RSA para combinar assinaturas, resultando em uma que, ao ser verificada, corresponde à mensagem `TARGET`, fazendo com que seja aceita como legítima pelo sistema de verificação.
